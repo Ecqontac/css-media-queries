@@ -1,0 +1,23 @@
+{
+  "name": "css-media-queries",
+  "version": "1.0.0",
+  "description": "An introduction to CSS Media Queries",
+  "main": "index.js",
+  "scripts": {
+    "slides": "npx reveal-md css-media-queries.md",
+      "customcss": "npx reveal-md css-media-queries.md -w --css custom.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interglobalmedia/css-media-queries.git"
+  },
+  "author": "Maria D. Campbell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interglobalmedia/css-media-queries/issues"
+  },
+  "homepage": "https://github.com/interglobalmedia/css-media-queries#readme",
+  "devDependencies": {
+    "reveal-md": "^5.0.0"
+  }
+}
