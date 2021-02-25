@@ -188,7 +188,9 @@ ul {
 }
 ```
 
-I **just thought** it would be ***cool*** to ***get*** to the ***same place*** a ***bit differently***! And ***that*** is ***it***!  
+I ***chose*** a `max-width: 899px` because ***that*** is the `width` we ***need*** to **make sure** that ***all*** `navigation menu links` ***fit*** in the `viewport`. ***Any*** `width` ***less than*** `899px` would be ***too narrow***!
+
+I **just thought** it would be ***cool*** to ***get*** to the ***same place*** a ***bit differently*** using `flex-direction: column;` ***instead of*** `display: block;`! And ***that*** is ***it***!  
 
 ***Hopefully*** we will **be able** to ***separate*** our `navigation concerns` ***from*** our `CSS Grid column concerns` in our ***responsive design*** (`done`).
 
@@ -235,7 +237,9 @@ If ***any*** of you ***decide*** to have ***more than*** `3 columns` (or ***less
 
 We have been ***going by*** `browser viewport width` ***using*** the `max-width property`. ***Some*** go the ***other*** `way around`, and ***use*** the `min-width property`. ***Either way*** is `completely valid`.
 
-***Using*** the `min-width` ***approach*** is ***also*** known as ``"mobile first"``. If ***that*** is the ***way*** you ***want*** to ***go***, you could always ***refactor*** your `CSS` and ***make it*** a `"mobile first"` ***design***!
+***Using*** the `min-width` ***approach*** is ***also*** known as `"mobile first"`. If ***that*** is the ***way*** you ***want*** to ***go***, you could always ***refactor*** your `CSS` and ***make it*** a `"mobile first"` (smaller screens) ***design***! That is ***because*** the `design` ***outside*** of the `media query` ***relates*** to `mobile design`. ***Only*** the `CSS` ***inside*** the `media query` ***relates*** to `desktop design`.
+
+***Using*** the `max-width` ***approach*** is also ***technically known*** as `"desktop first"` (larger screens). That is ***because*** the `design` ***outside*** of the `media query` ***relates*** to the `desktop design`. ***Only*** the `CSS` ***inside*** the `media query` ***relates*** to the `mobile design`.
 
 </section>
 
@@ -255,7 +259,7 @@ A `media query` is ***composed*** of an ***optional*** `media type` and ***any n
 
 A `media query` ***computes*** to `true` when the `media type` (***if specified***) ***matches*** the `device` ***on which*** the `document` is ***being displayed*** and ***all*** `media feature expressions` ***compute*** to `true`.
 
-`Queries` ***involving*** `unknown media types` are ***always*** `false`.
+`Queries` ***involving*** `unknown media types` ***always evaluate*** to `false`.
 
 </section>
 
@@ -309,9 +313,9 @@ For ***example***, we are `using`
 ---
 
 <section class="section">
-	<h2 class="sentence">Media features</h2>
+	<h2 class="sentence">Available media features</h2>
 
-+ 1any-hover1: Does ***any*** `available input mechanism` ***allow*** the `user` to ***hover over*** `elements`? (***added*** in `Media Queries Level 4`).
++ `any-hover`: Does ***any*** `available input mechanism` ***allow*** the `user` to ***hover over*** `elements`? (***added*** in `Media Queries Level 4`).
 
 + `any-pointer`: Is ***any*** `available input mechanism` a `pointing device`, and ***if so***, ***how accurate*** is it? (***added*** in `Media Queries Level 4`).
 
