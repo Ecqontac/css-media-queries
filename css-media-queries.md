@@ -222,7 +222,7 @@ The **CSS**:
 
 This is ***all*** we ***need*** to do to ***make*** our `images` ***stack*** `one` on `top` of the `other`.
 
-If ***any*** of you ***decide*** to have ***more than*** `3 columns` (or ***less than*** `3 columns`) in your `image gallery`, the `media query CSS code` ***might*** differ ***slightly***. If ***that*** is the ***case***, let me ***know*** and I can go over ***individual cases*** `one-on-one`.
+If ***any*** of you ***decide*** to have ***more than*** `3 columns` (or ***less than*** `3 columns`) in your `image gallery`, the `media query CSS code` ***might*** differ ***slightly***. If ***that*** is the ***case***, let me ***know*** and I can go over ***different scenarios*** in `class` or ***during*** `office hour`.
 
 </section>
 
