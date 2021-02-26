@@ -201,7 +201,7 @@ I **just thought** it would be ***cool*** to ***get*** to the ***same place*** a
 <section class="section">
     <h2 class="sentence">The CSS media query and our CSS Grid image gallery</h2>
 
-The ***next thing*** we **have** to ***make sure*** is that our ***vertically columned*** `image gallery` will ***render nicely*** in ***smaller screens***. Our ***goal*** is to make them ***display*** on `top` of `each other` (`one column`) in ***small screens*** such as an `iPhone 4`, for ***example***!
+The ***next thing*** we **have** to ***make sure*** is that our ***vertically columned*** `image gallery` will ***render nicely*** in ***smaller screens***. Our ***goal*** is to make them ***display*** on `top` of `each other` (`one column`) in ***any*** `smaller screens` such as an `iPhone 4`, for ***example***!
 
 </section>
 
@@ -237,7 +237,7 @@ We have been ***going by*** `browser viewport width` ***using*** the `max-width 
 
 ***Using*** the `min-width` ***approach*** is ***also*** known as `"mobile first"`. That is ***because*** the `design` ***outside*** of the `media query` ***relates*** to `mobile design`. ***Only*** the `CSS` ***inside*** the `media query` ***relates*** to `desktop design`.
 
-`CSS code` is ***considered*** `mobile first design` when we **use** the `min-width` ***CSS property*** in our `media query` and the ***specified width*** is that of `larger screens`, i.e. `min-width: 800px` or `min-width: 900px`, or even `min-width: 1280px`, etc. The `min-width` should be able to ***fit*** the `content` of the `page` on ***any width*** `larger` than the `min-width` ***provided*** without omitting ***any*** `page content`.
+`CSS code` is ***considered*** `mobile first design` when we **use** the `min-width` ***CSS property*** in our `media query` and the ***specified width*** is that of `larger screens`, i.e. `min-width: 800px` or `min-width: 900px`, or even `min-width: 1280px`, etc. The `min-width` should be able to ***fit*** the `content` of the `page` on ***any width*** `larger than` or `equal to` the `min-width` ***provided*** `without omitting` ***any*** `page content`.
 
 ***Using*** the `max-width` ***approach*** is also ***technically known*** as `"desktop first"` (larger screens). That is ***because*** the `design` ***outside*** of the `media query` ***relates*** to the `desktop design`. ***Only*** the `CSS` ***inside*** the `media query` ***relates*** to the `mobile design`.
 
@@ -248,9 +248,26 @@ We have been ***going by*** `browser viewport width` ***using*** the `max-width 
 ---
 
 <section class="section">
-	<h2 class="sentence">The media syntax</h2>
+	<h2 class="sentence">The media query syntax</h2>
 
 A `media query` ***consists*** of an ***optional*** `media type` and ***any number*** of `media feature expressions`. ***Multiple queries*** can be ***combined*** in ***various ways*** by ***using*** `logical operators`. `Media queries` are `case-insensitive`. But ***keep*** it ***simple*** anyway!
+
+</section>
+
+---
+
+<section class="section">
+	<h2 class="sentence">Media feature expressions</h2>
+
+A `media feature expression` is the **part** of a `media query` where the `media feature` and its `value` (***if applicable***) are ***defined***.
+</section>
+
+---
+
+<section class="section">
+	<h2 class="sentence">What do media feature expressions test for?</h2>
+
+A `media feature expression` ***tests*** for the `presence` or `value` of a `media feature`, and it is ***entirely optional***. Each `media feature expression` **must** be ***surrounded*** by `parentheses ()`. In the **case** of ***our*** `media queries`, however, we ***need*** to ***include*** the `media feature expression` because we ***need both*** the `site navigation` and the `CSS Grid columns` to ***render differently*** on `smaller screens` vs `larger screens`.
 
 </section>
 
@@ -292,12 +309,12 @@ For ***example***, we are `using`
 
 <section class="section">
     <h2 class="sentence">Logical Operators in Media Queries</h2>
-    
+
 According to [Shaye Howe](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/),
 
 > Logical operators in media queries help build powerful expressions. There are three different logical operators available for use within media queries, including and, not, and only.
 
-And 
+And
 
 > Using the and logical operator within a media query allows an extra condition to be added, making sure that a browser or device does both a, b, c, and so forth. Multiple individual media queries can be comma separated, acting as an unspoken or operator.
 
@@ -311,7 +328,7 @@ And
 
 <section class="section">
     <h2 class="sentence">The not logical operator and media types</h2>
-    
+
 A `not logical operator` can be ***used*** at the ***beginning*** of a `media query` to ***toggle*** the `truthiness` of the ***whole*** `query`.
 
 The `not operator` is **useful** to ***apply*** `styles` when ***certain conditions*** are ***not met*** by the `browser` or `device`. In the ***following*** `example`, the `media query` ***will apply*** when the `primary pointing device` ***can’t hover*** over `elements`:
@@ -350,7 +367,7 @@ Regarding the `logical not operator`, ***according*** to [Digital Ocean,](https:
 
 <section class="section">
     <h2 class="sentence">The only logical operator and media types</h2>
-    
+
 The `only logical operator` is a ***bit special*** and `hides` the ***entire query*** in `older browsers`. `Older browsers` ***don't understand*** the `only keyword`, so the ***entire*** `media query` is ***ignored***.
 
 Regarding the `logical only operator`, ***according*** to [Digital Ocean,](https://www.digitalocean.com/community/tutorials/css-media-queries),
@@ -368,7 +385,19 @@ According to `MDN` on ***their page*** entitled [Using media queries](https://de
 
 > The only operator is used to apply a style only if an entire query matches, and is useful for preventing older browsers from applying selected styles. When not using only, older browsers would interpret the query screen and (max-width: 500px) as screen, ignoring the remainder of the query, and applying its styles on all screens. If you use the only operator, you must also specify a media type.
 
-We are `keeping things simple` on our `portfolio site`. Complexity is ***not necessary*** for our setup. It is ***always*** `best practice` to `keep things` as **simple** as ***possible***, and only ***add features*** if they are ***necessary***!
+According to w3schools on their page entitled [CSS @media Rule](https://www.w3schools.com/cssref/css3_pr_mediaquery.asp),
+
+> meaning of the only keyword:
+
+> only: The only keyword prevents older browsers that do not support media queries with media features from applying the specified styles. It has no effect on modern browsers.
+
+> It is optional. However, if you use only, you must also specify a media type.
+
+`w3schools` ***perhaps describes*** the `only logical operator` in the ***most concise*** yet ***comprehensive manner*** with the most ***up-to-date information***.
+
+One ***should not*** take ***any documentation*** out there ***immediately*** as being the ***most up-to-date*** or ***comprehensive***. Sometimes, multiple sites will simply ***echo*** what a **major** (and ***purportedly*** `credible source`) ***provides***. It would ***not*** necessarily even be a ***matter*** of ***credibility***. It would be a ***matter*** of whether the **information** is `comprehensive` and `up-to-date`. ***Neither*** is ***necessarily*** the **case**. So when you ***search*** for ***information***, you **have** to ***search*** for it in ***multiple places***, and use `search keywords` which would ***point you*** to the `latest information` ***regarding*** what you are ***looking for***. Then you must **assess** what **information** to ***extract*** and what **information** to ***discard***! That is ***why*** I end up ***providing*** so many `related resources` at the ***end*** of my `slide decks`. I ***search*** for **information** in ***many places*** and even ***include them*** as **references** to ***show*** how information can ***slightly vary*** or **only** be a ***part*** of the **picture** within **individual sources**. ***Lastly***, I **check** to see ***by date*** when was the `source` ***last updated***!
+
+We are `keeping things simple` on our `portfolio site`. `Complexity` is ***not necessary*** for our setup. It is ***always*** `best practice` to `keep things` as **simple** as ***possible***, and only ***add features*** if they are ***necessary***!
 
 </section>
 
@@ -482,8 +511,6 @@ We are `keeping things simple` on our `portfolio site`. Complexity is ***not nec
 <section class="section">
     <h2 class="sentence">Related Resources</h2>
 
-+ [A Complete Guide to CSS Media Queries: CSS Tricks](https://css-tricks.com/a-complete-guide-to-css-media-queries/)
-
 + [Responsive Web Design - Media Queries: w3schools](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)
 
 + [CSS @media Rule: w3schools](https://www.w3schools.com/cssref/css3_pr_mediaquery.asp)
@@ -492,8 +519,8 @@ We are `keeping things simple` on our `portfolio site`. Complexity is ***not nec
 
 + [Using media queries: MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 
-+ [CSS Media Queries: Quick Reference & Guide](https://www.digitalocean.com/community/tutorials/css-media-queries)
++ [CSS Media Queries: Quick Reference & Guide: Digital Ocean](https://www.digitalocean.com/community/tutorials/css-media-queries)
 
-+ [Responsive Web Design](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/)
++ [Responsive Web Design: Shay Howe](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/)
 
 </section>
