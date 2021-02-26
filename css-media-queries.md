@@ -48,7 +48,7 @@ We are ***going*** to be ***using*** the `CSS media query` in ***two places*** i
 
 In our `site navigation`, ***right now*** we have the ***following*** `CSS` for ***larger screens***:
 
-The `CSS` (***including*** the `media query`):
+The `CSS` (***including*** the `media query` for ***smaller screens***):
 
 ```css
 * {
@@ -222,9 +222,7 @@ The **CSS**:
 }
 ```
 
-This is ***all*** we ***need*** to do to ***make*** our `images` ***stack*** `one` on `top` of the `other`.
-
-If ***any*** of you ***decide*** to have ***more than*** `3 columns` (or ***less than*** `3 columns`) in your `image gallery`, the `media query CSS code` ***might*** differ ***slightly***. If ***that*** is the ***case***, let me ***know*** and I can go over ***different scenarios*** in `class` or ***during*** `office hour`.
+This is ***all*** we ***need*** to do to ***make*** our `images` ***stack*** `one` on `top` of the `other` in ***smaller screens***.
 
 </section>
 
@@ -233,13 +231,17 @@ If ***any*** of you ***decide*** to have ***more than*** `3 columns` (or ***less
 <section class="section">
 	<h2 class="sentence">So when is using media queries useful?</h2>
 
-`Media queries` are ***useful*** when you want to ***modify*** your `site` or `app` ***depending*** on a ***device's*** `general type` (***such as*** `print` vs `screen`), ***or*** ***specific characteristics*** and ***parameters*** (***such as*** `screen resolution` or `browser viewport width`).
+`Media queries` are ***useful*** when you want to ***modify*** your `site` or `app` ***depending*** on a ***device's*** `general media type` (***such as*** `print` vs `screen`), ***or*** ***specific characteristics*** and ***parameters*** (***such as*** `screen resolution` or `browser viewport width`).
 
 We have been ***going by*** `browser viewport width` ***using*** the `max-width property`. ***Some*** go the ***other*** `way around`, and ***use*** the `min-width property`. ***Either way*** is `completely valid`.
 
-***Using*** the `min-width` ***approach*** is ***also*** known as `"mobile first"`. If ***that*** is the ***way*** you ***want*** to ***go***, you could always ***refactor*** your `CSS` and ***make it*** a `"mobile first"` (smaller screens) ***design***! That is ***because*** the `design` ***outside*** of the `media query` ***relates*** to `mobile design`. ***Only*** the `CSS` ***inside*** the `media query` ***relates*** to `desktop design`.
+***Using*** the `min-width` ***approach*** is ***also*** known as `"mobile first"`. That is ***because*** the `design` ***outside*** of the `media query` ***relates*** to `mobile design`. ***Only*** the `CSS` ***inside*** the `media query` ***relates*** to `desktop design`.
+
+`CSS code` is ***considered*** `mobile first design` when we **use** the `min-width` ***CSS property*** in our `media query` and the ***specified width*** is that of `larger screens`, i.e. `min-width: 800px` or `min-width: 900px`, or even `min-width: 1280px`, etc. The `min-width` should be able to ***fit*** the `content` of the `page` on ***any width*** `larger` than the `min-width` ***provided*** without omitting ***any*** `page content`.
 
 ***Using*** the `max-width` ***approach*** is also ***technically known*** as `"desktop first"` (larger screens). That is ***because*** the `design` ***outside*** of the `media query` ***relates*** to the `desktop design`. ***Only*** the `CSS` ***inside*** the `media query` ***relates*** to the `mobile design`.
+
+`CSS code` is ***considered*** to be `desktop first design` when we ***use*** the `max-width` ***CSS property*** in our `media query` and the ***specified width*** is that of `smaller screens`. i.e. `max-width: 899px`, `max-width: 599px`, etc. The `max-width` should be able to ***fit*** the `content` of the `page` in ***any width*** `smaller` or `equal` to the `max-width` provided ***without omitting*** any `page content`.
 
 </section>
 
@@ -248,7 +250,7 @@ We have been ***going by*** `browser viewport width` ***using*** the `max-width 
 <section class="section">
 	<h2 class="sentence">The media syntax</h2>
 
-A `media query` is ***composed*** of an ***optional*** `media type` and ***any number*** of `media feature expressions`. ***Multiple queries*** can be ***combined*** in ***various ways*** by ***using*** `logical operators`. `Media queries` are `case-insensitive`. But ***keep*** it ***simple*** anyway!
+A `media query` ***consists*** of an ***optional*** `media type` and ***any number*** of `media feature expressions`. ***Multiple queries*** can be ***combined*** in ***various ways*** by ***using*** `logical operators`. `Media queries` are `case-insensitive`. But ***keep*** it ***simple*** anyway!
 
 </section>
 
@@ -283,6 +285,90 @@ For ***example***, we are `using`
 ```
 
 ***Here***, we do ***not*** `define` a ***specific*** `@media type`, so the `all type` is ***implied***. And we ***do want*** our `site` to ***render*** a `certain way` on ***all*** `devices`!
+
+</section>
+
+---
+
+<section class="section">
+    <h2 class="sentence">Logical Operators in Media Queries</h2>
+    
+According to [Shaye Howe](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/),
+
+> Logical operators in media queries help build powerful expressions. There are three different logical operators available for use within media queries, including and, not, and only.
+
+And 
+
+> Using the and logical operator within a media query allows an extra condition to be added, making sure that a browser or device does both a, b, c, and so forth. Multiple individual media queries can be comma separated, acting as an unspoken or operator.
+
+<aside class="notes">
+    Note: Take the students to Shay Howe's [Responsive Web Design](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/) to show examples.
+</aside>
+
+</section>
+
+---
+
+<section class="section">
+    <h2 class="sentence">The not logical operator and media types</h2>
+    
+A `not logical operator` can be ***used*** at the ***beginning*** of a `media query` to ***toggle*** the `truthiness` of the ***whole*** `query`.
+
+The `not operator` is **useful** to ***apply*** `styles` when ***certain conditions*** are ***not met*** by the `browser` or `device`. In the ***following*** `example`, the `media query` ***will apply*** when the `primary pointing device` ***can’t hover*** over `elements`:
+
+```css
+@media not screen and (hover: hover) {
+    p {
+        font-weight: bold;
+    }
+}
+```
+
+This `example` can be ***viewed*** on the `article` entitled [CSS Media Queries: Quick Reference & Guide](https://www.digitalocean.com/community/tutorials/css-media-queries) on `Digital Ocean`. I just ***added*** the `CSS rule set` inside.
+
+
+Going back to `Shay Howe`, ***another example*** of the `use` of the `not logical operator` with `media types` is the ***following***:
+
+```css
+@media not screen and (color) {
+    h1 {
+        text-align: center;
+        font-size: 2.25rem;
+    }
+}
+```
+
+The ***above*** `expression` ***applies*** to any `device` that does ***not have*** a `color screen`. It ***applies*** to `black` and `white` or `monochrome screens`, for ***example***.
+
+Regarding the `logical not operator`, ***according*** to [Digital Ocean,](https://www.digitalocean.com/community/tutorials/css-media-queries),
+
+> Note that with not the media type is not optional. Also, not doesn’t negate an entire query list (queries separated with commas), but only one query.
+
+</section>
+
+---
+
+<section class="section">
+    <h2 class="sentence">The only logical operator and media types</h2>
+    
+The `only logical operator` is a ***bit special*** and `hides` the ***entire query*** in `older browsers`. `Older browsers` ***don't understand*** the `only keyword`, so the ***entire*** `media query` is ***ignored***.
+
+Regarding the `logical only operator`, ***according*** to [Digital Ocean,](https://www.digitalocean.com/community/tutorials/css-media-queries),
+
+> As with the not operator, the media type is not optional when using only. Note that legacy browsers that don’t support Media Queries level 3 are rare now so in most cases the use of only is unnecessary.
+
+Regarding the `logical only operator`, ***according*** to
+[Shay Howe](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/),
+
+> The only logical operator is a new operator and is not recognized by user agents using the HTML4 algorithm, thus hiding the styles from devices or browsers that don’t support media queries. Below, the expression selects only screens in a portrait orientation that have a user agent capable of rending media queries.
+
+He ***did write*** his ***book*** way back in 2014. ***A lot*** has ***changed*** with `browsers` (***and*** `media queries`) since then!
+
+According to `MDN` on ***their page*** entitled [Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries), as regards the `logical only operator `(now),
+
+> The only operator is used to apply a style only if an entire query matches, and is useful for preventing older browsers from applying selected styles. When not using only, older browsers would interpret the query screen and (max-width: 500px) as screen, ignoring the remainder of the query, and applying its styles on all screens. If you use the only operator, you must also specify a media type.
+
+We are `keeping things simple` on our `portfolio site`. Complexity is ***not necessary*** for our setup. It is ***always*** `best practice` to `keep things` as **simple** as ***possible***, and only ***add features*** if they are ***necessary***!
 
 </section>
 
@@ -405,5 +491,9 @@ For ***example***, we are `using`
 + [@media: MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)
 
 + [Using media queries: MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+
++ [CSS Media Queries: Quick Reference & Guide](https://www.digitalocean.com/community/tutorials/css-media-queries)
+
++ [Responsive Web Design](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/)
 
 </section>
