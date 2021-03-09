@@ -312,11 +312,11 @@ For ***example***, we are `using`
 
 According to [Shaye Howe](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/),
 
-> Logical operators in media queries help build powerful expressions. There are three different logical operators available for use within media queries, including and, not, and only.
+> Logical operators in media queries help build powerful expressions. There are three different logical operators available for use within media queries, including `and`, `not`, and `only`.
 
 And
 
-> Using the and logical operator within a media query allows an extra condition to be added, making sure that a browser or device does both a, b, c, and so forth. Multiple individual media queries can be comma separated, acting as an unspoken or operator.
+> Using the `and` logical operator within a media query allows an extra condition to be added, making sure that a browser or device does both a, b, c, and so forth. Multiple individual media queries can be comma separated, acting as an unspoken `or` operator.
 
 <aside class="notes">
     Note: Take the students to Shay Howe's [Responsive Web Design](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/) to show examples.
@@ -331,7 +331,9 @@ And
 
 A `not logical operator` can be ***used*** at the ***beginning*** of a `media query` to ***toggle*** the `truthiness` of the ***whole*** `query`.
 
-The `not operator` is **useful** to ***apply*** `styles` when ***certain conditions*** are ***not met*** by the `browser` or `device`. In the ***following*** `example`, the `media query` ***will apply*** when the `primary pointing device` ***can’t hover*** over `elements`:
+The `not operator` is **useful** to ***apply*** `styles` when ***certain conditions*** are ***not met*** by the `browser` or `device`.
+
+In the ***following*** `example`, the `media query` ***will apply*** when the `primary pointing device` ***can’t hover*** over `elements`:
 
 ```css
 @media not screen and (hover: hover) {
@@ -359,7 +361,7 @@ The ***above*** `expression` ***applies*** to any `device` that does ***not have
 
 Regarding the `logical not operator`, ***according*** to [Digital Ocean,](https://www.digitalocean.com/community/tutorials/css-media-queries),
 
-> Note that with not the media type is not optional. Also, not doesn’t negate an entire query list (queries separated with commas), but only one query.
+> Note that with `not`, the media type is ***not optional***. Also, `not` **doesn’t negate** an ***entire*** `query list` (queries separated with commas), but ***only*** `one query`.
 
 </section>
 
@@ -372,32 +374,38 @@ The `only logical operator` is a ***bit special*** and `hides` the ***entire que
 
 Regarding the `logical only operator`, ***according*** to [Digital Ocean,](https://www.digitalocean.com/community/tutorials/css-media-queries),
 
-> As with the not operator, the media type is not optional when using only. Note that legacy browsers that don’t support Media Queries level 3 are rare now so in most cases the use of only is unnecessary.
+> As with the `not` operator, the media type is ***not optional*** when using `only`. Note that legacy browsers that don’t support Media Queries level 3 are rare now so in most cases the `use` of `only` is **unnecessary**.
 
 Regarding the `logical only operator`, ***according*** to
 [Shay Howe](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/),
 
-> The only logical operator is a new operator and is not recognized by user agents using the HTML4 algorithm, thus hiding the styles from devices or browsers that don’t support media queries. Below, the expression selects only screens in a portrait orientation that have a user agent capable of rending media queries.
+> The `only` logical operator is a new operator and is ***not recognized*** by `user agents` using the HTML4 algorithm, thus hiding the styles from devices or browsers that ***don’t support*** `media queries`. Below, the expression selects only screens in a `portrait orientation` that have a `user agent` **capable** of **rending** `media queries`.
 
 He ***did write*** his ***book*** way back in 2014. ***A lot*** has ***changed*** with `browsers` (***and*** `media queries`) since then!
 
 According to `MDN` on ***their page*** entitled [Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries), as regards the `logical only operator `(now),
 
-> The only operator is used to apply a style only if an entire query matches, and is useful for preventing older browsers from applying selected styles. When not using only, older browsers would interpret the query screen and (max-width: 500px) as screen, ignoring the remainder of the query, and applying its styles on all screens. If you use the only operator, you must also specify a media type.
+> The `only` operator is used to **apply** a `style` ***only if*** an **entire query** `matches`, and is **useful** for ***preventing*** older browsers from **applying** `selected styles`. When **not using** `only`, older browsers would **interpret** the **query** `screen and (max-width: 500px)` as `screen`, **ignoring** the **remainder** of the `query`, and **applying** its `styles` on ***all screens***. If you **use** the `only` operator, you ***must also*** `specify` a `media type`.
 
-According to w3schools on their page entitled [CSS @media Rule](https://www.w3schools.com/cssref/css3_pr_mediaquery.asp),
+According to `w3schools` on their **page** entitled [CSS @media Rule](https://www.w3schools.com/cssref/css3_pr_mediaquery.asp),
 
-> meaning of the only keyword:
+> meaning of the `only` keyword:
 
-> only: The only keyword prevents older browsers that do not support media queries with media features from applying the specified styles. It has no effect on modern browsers.
+> `only`: The `only` keyword ***prevents*** older browsers that ***do not*** support `media queries` with `media features` from ***applying*** the ***specified*** `styles`. It has ***no effect*** on` modern browsers`.
 
-> It is optional. However, if you use only, you must also specify a media type.
+> It is **optional**. However, if you **use** `only`, you ***must also*** `specify` a `media type`.
 
 `w3schools` ***perhaps describes*** the `only logical operator` in the ***most concise*** yet ***comprehensive manner*** with the most ***up-to-date information***.
 
-One ***should not*** take ***any documentation*** out there ***immediately*** as being the ***most up-to-date*** or ***comprehensive***. Sometimes, multiple sites will simply ***echo*** what a **major** (and ***purportedly*** `credible source`) ***provides***. It would ***not*** necessarily even be a ***matter*** of ***credibility***. It would be a ***matter*** of whether the **information** is `comprehensive` and `up-to-date`. ***Neither*** is ***necessarily*** the **case**. So when you ***search*** for ***information***, you **have** to ***search*** for it in ***multiple places***, and use `search keywords` which would ***point you*** to the `latest information` ***regarding*** what you are ***looking for***. Then you must **assess** what **information** to ***extract*** and what **information** to ***discard***! That is ***why*** I end up ***providing*** so many `related resources` at the ***end*** of my `slide decks`. I ***search*** for **information** in ***many places*** and even ***include them*** as **references** to ***show*** how information can ***slightly vary*** or **only** be a ***part*** of the **picture** within **individual sources**. ***Lastly***, I **check** to see ***by date*** when was the `source` ***last updated***!
+One ***should not*** take ***any documentation*** out there ***immediately*** as being the `most up-to-date` or `comprehensive`.
 
-We are `keeping things simple` on our `portfolio site`. `Complexity` is ***not necessary*** for our setup. It is ***always*** `best practice` to `keep things` as **simple** as ***possible***, and only ***add features*** if they are ***necessary***!
+Sometimes, **multiple sites** will simply ***echo*** what a **major** (and ***purportedly*** `credible source`) ***provides***. It would ***not*** necessarily even be a ***matter*** of ***credibility***. It would be a ***matter*** of whether the **information** is `comprehensive` and `up-to-date`. ***Neither*** is ***necessarily*** the **case**.
+
+When you ***search*** for ***information***, you **have** to ***search*** for it in ***multiple places***, and use `search keywords` which would ***point you*** to the `latest information` ***regarding*** what you are ***looking for***. Then you must **assess** what **information** to ***extract*** and what **information** to ***discard***! That is ***why*** I end up ***providing*** so many `related resources` at the ***end*** of my `slide decks`.
+
+I ***search*** for **information** in ***many places*** and even ***include them*** as **references** to ***show*** how `information` can ***slightly vary*** or **only** be a ***part*** of the **picture** within **individual sources**. ***Lastly***, I **check** to see `by date` when was the `source` ***last updated***!
+
+We are **keeping things simple** on our `portfolio site`. `Complexity` is ***not necessary*** for our `setup`. It is ***always*** `best practice` to `keep things` as **simple** as ***possible***, and only ***add features*** if they are ***necessary***!
 
 </section>
 
